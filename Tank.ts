@@ -1,8 +1,14 @@
 import {Entity} from "./Entity.js";
 import {Location} from "./Location.js";
 
+interface drawFunc{
+    ():void
+}
+
 
 export abstract class Tank  implements Entity {
+    draw() {
+    }
 
     abstract up(): number
     abstract down(): number

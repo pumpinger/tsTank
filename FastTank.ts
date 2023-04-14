@@ -4,6 +4,8 @@ import {Tank} from "./Tank.js";
 
 
 export class FastTank extends Tank{
+    draw() {
+    }
     private name: string = '快坦克';
 
     constructor(name: string) {

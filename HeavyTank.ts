@@ -1,9 +1,12 @@
 import {Entity} from "./Entity.js";
 import {Location} from "./Location.js";
 import {Tank} from "./Tank.js";
+import {game} from "./index.js";
 
 
 export class HeavyTank extends Tank{
+    draw() {
+    }
     private name: string = '重坦克';
 
     constructor(name: string) {
@@ -14,6 +17,7 @@ export class HeavyTank extends Tank{
 
 
     up(): number {
+        game.stop()
         return 0;
     }
 

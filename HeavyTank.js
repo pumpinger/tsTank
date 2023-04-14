@@ -1,5 +1,8 @@
 import { Tank } from "./Tank.js";
+import { game } from "./index.js";
 export class HeavyTank extends Tank {
+    draw() {
+    }
     constructor(name) {
         super();
         this.name = '重坦克';
@@ -7,6 +10,7 @@ export class HeavyTank extends Tank {
         this.height = 40;
     }
     up() {
+        game.stop();
         return 0;
     }
     down() {

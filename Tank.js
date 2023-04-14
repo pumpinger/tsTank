@@ -5,6 +5,8 @@ export class Tank {
         this.height = 30;
         this.width = 30;
     }
+    draw() {
+    }
     getLocation() {
         console.log(this.location);
     }

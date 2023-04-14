@@ -1,5 +1,7 @@
 import { Tank } from "./Tank.js";
 export class FastTank extends Tank {
+    draw() {
+    }
     constructor(name) {
         super();
         this.name = '快坦克';

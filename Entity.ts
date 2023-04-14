@@ -1,7 +1,6 @@
 import {Location} from "./Location.js";
+import {Object} from "./Object.js";
 
-export interface Entity {
-    width: number;
-    height: number;
-    location?:Location
+export interface Entity extends Object{
+    draw():void
 }
