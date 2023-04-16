@@ -25,8 +25,10 @@ export class Game {
         console.log('游戏开始');
 
 
-        // let tank = new FastTank('98')
+        let tank2 = new FastTank('98')
         let tank = new HeavyTank('98')
+        let aa:any = 3
+        console.log(aa);
         tank.getLocation()
         tank.up()
         // let user = new UserController()
