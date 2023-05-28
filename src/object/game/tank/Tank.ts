@@ -2,8 +2,9 @@ import {Entity} from "../../interface/Entity.js";
 import {Location} from "../../base/Location.js";
 import {Bullet} from "./Bullet.js";
 
-interface drawFunc{
-    ():void
+export const enum TankEnum {
+    FAST = 1,
+    HEAVY,
 }
 
 export  interface Shot
@@ -23,26 +24,29 @@ export  interface Move
 
 
 
-export abstract class Tank  implements Entity,Shot,Move{
+export abstract class Tank  extends Entity implements Shot,Move{
     private bullet: Bullet;
+    abstract type:TankEnum
     draw() {
     }
 
     constructor(bullet:Bullet) {
+        super()
+        this.isDefaultRender = true
         this.bullet = bullet
     }
 
     up(): void{
-        this.location.x -= 1
-    }
-    down():  void{
-        this.location.x += 1
-    }
-    left():  void{
         this.location.y -= 1
     }
-    right():  void{
+    down():  void{
         this.location.y += 1
+    }
+    left():  void{
+        this.location.x -= 1
+    }
+    right():  void{
+        this.location.x += 1
     }
 
     getLocation(){

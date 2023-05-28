@@ -5,18 +5,21 @@ import {HeavyTank} from "./object/game/tank/HeavyTank";
 import {TankFactory} from "./object/game/tank/TankFactory.js";
 import {Controller, PlayerController} from "./controller/Controller.js";
 import {Input, KeyboardInput} from "./Input.js";
+import {Render} from "./render/Render.js";
 
 export class Game {
     canvas:HTMLCanvasElement
     private scene: Scene;
-    private ctx: CanvasRenderingContext2D | null;
-    constructor(canvas:HTMLCanvasElement) {
+    ctx: CanvasRenderingContext2D | null;
+    render: Render;
+    constructor(canvas:HTMLCanvasElement,render:Render) {
         this.canvas = canvas
         this.scene  = new Scene({
             width:this.canvas.width,
             height:this.canvas.height
         },this.canvas)
         this.ctx = this.scene.getCtx()
+        this.render = render
 
     }
 

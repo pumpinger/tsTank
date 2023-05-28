@@ -28,13 +28,13 @@ export  class PlayerController extends Controller {
                 this.tank.up()
                 break;
             case "ArrowDown":
-                this.tank.up()
+                this.tank.down()
                 break;
             case "ArrowLeft":
-                this.tank.up()
+                this.tank.left()
                 break;
             case "ArrowRight":
-                this.tank.up()
+                this.tank.right()
                 break;
             default:
                 return;
