@@ -1,13 +1,14 @@
 import { Location } from "../../base/Location.js";
 import {Entity} from "../../interface/Entity.js";
 
-export abstract class Bullet implements Entity {
+export abstract class Bullet extends Entity {
     width: number;
     height: number;
     location?: Location | undefined;
     abstract create():void
 
     constructor() {
+        super()
         this.width = 1;
         this.height = 1;
     }
