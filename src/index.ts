@@ -6,11 +6,10 @@ canvas = document.querySelector("canvas");
 
 let game:Game
 if(canvas !== null){
-    let render:Render;
-    render = new Render();
-    game = new Game(canvas,render);
+    game = new Game(canvas);
     game.init()
-    render.start()
+
+    //按下按钮开始 之类的.
     game.start()
 }else{
     console.warn('不存在canvas');

@@ -25,6 +25,7 @@ export  interface Move
 
 
 export abstract class Tank  extends Entity implements Shot,Move{
+    protected speed:number = 5;
     private bullet: Bullet;
     abstract type:TankEnum
     draw() {
@@ -37,16 +38,16 @@ export abstract class Tank  extends Entity implements Shot,Move{
     }
 
     up(): void{
-        this.location.y -= 1
+        this.location.y -= this.speed
     }
     down():  void{
-        this.location.y += 1
+        this.location.y += this.speed
     }
     left():  void{
-        this.location.x -= 1
+        this.location.x -= this.speed
     }
     right():  void{
-        this.location.x += 1
+        this.location.x += this.speed
     }
 
     getLocation(){

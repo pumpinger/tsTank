@@ -4,7 +4,8 @@ import {DarwTank} from "../../../render/DarwTank.js";
 
 
 export class HeavyTank extends Tank{
-    type: TankEnum;
+    speed = 4
+    type: TankEnum
     draw() {
         new DarwTank().draw(this)
     }

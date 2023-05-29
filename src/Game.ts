@@ -10,20 +10,22 @@ import {Render} from "./render/Render.js";
 export class Game {
     canvas:HTMLCanvasElement
     private scene: Scene;
-    ctx: CanvasRenderingContext2D | null;
+    ctx: CanvasRenderingContext2D;
     render: Render;
-    constructor(canvas:HTMLCanvasElement,render:Render) {
+    constructor(canvas:HTMLCanvasElement) {
         this.canvas = canvas
+
         this.scene  = new Scene({
             width:this.canvas.width,
             height:this.canvas.height
         },this.canvas)
         this.ctx = this.scene.getCtx()
-        this.render = render
+        this.render = new Render(this.ctx,this.canvas);
 
     }
 
     init():void{
+        this.render.start()
         console.log('游戏初始化');
 
     }
