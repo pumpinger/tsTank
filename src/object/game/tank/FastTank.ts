@@ -1,6 +1,6 @@
 import {Tank, TankEnum} from "./Tank.js";
 import {Bullet} from "./Bullet.js";
-import {DarwTank} from "../../../render/DarwTank.js";
+import {DrawTank} from "../../../render/DrawTank.js";
 
 
 export class FastTank extends Tank{
@@ -8,7 +8,7 @@ export class FastTank extends Tank{
     type: TankEnum;
 
     draw() {
-        new DarwTank().draw(this)
+        new DrawTank().draw(this)
     }
 
     private name: string = '快坦克';

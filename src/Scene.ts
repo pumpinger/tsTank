@@ -2,14 +2,14 @@ import {createCanvas} from "./tools/canvas.js";
 import {Object} from "./object/interface/Object.js";
 
 export class Scene {
-    private gameScene: Object;
+    size: Object;
     private canvas: HTMLCanvasElement;
     private ctx: CanvasRenderingContext2D;
-    constructor(gameScene:Object, canvas:HTMLCanvasElement) {
-        this.gameScene = gameScene;
+    constructor(size:Object, canvas:HTMLCanvasElement) {
+        this.size = size;
         this.canvas = canvas
 
-        let ctx =  createCanvas(this.canvas, this.gameScene);
+        let ctx =  createCanvas(this.canvas, this.size);
         if (ctx){
             this.ctx = ctx
         }else{

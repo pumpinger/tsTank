@@ -9,7 +9,7 @@ import {Render} from "./render/Render.js";
 
 export class Game {
     canvas:HTMLCanvasElement
-    private scene: Scene;
+    scene: Scene;
     ctx: CanvasRenderingContext2D;
     render: Render;
     constructor(canvas:HTMLCanvasElement) {

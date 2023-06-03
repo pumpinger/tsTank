@@ -1,6 +1,7 @@
 import {Entity} from "../../interface/Entity.js";
 import {Location} from "../../base/Location.js";
 import {Bullet} from "./Bullet.js";
+import {game} from "../../../index.js";
 
 export const enum TankEnum {
     FAST = 1,
@@ -54,12 +55,12 @@ export abstract class Tank  extends Entity implements Shot,Move{
         console.log(this.location);
     }
 
-    location: Location = new Location(0,0);
+    location: Location = new Location(game.scene.size.width/2,game.scene.size.height/2);
     height: number = 30;
     width: number = 30;
 
     fire(): void {
-        this.bullet.create()
+        this.bullet.create(this)
     }
 }
 

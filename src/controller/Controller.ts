@@ -1,4 +1,5 @@
 import {Tank} from "../object/game/tank/Tank.js";
+import {InputEnum} from "../Input";
 
 
 /**
@@ -13,7 +14,7 @@ export abstract class Controller {
         this.tank = tank
     }
 
-    abstract deal(op:string):void
+    abstract deal(inputEnum:InputEnum):void
 }
 
 export  class PlayerController extends Controller {
@@ -22,19 +23,22 @@ export  class PlayerController extends Controller {
         super(tank);
     }
 
-    deal(op:string) {
-        switch (op) {
-            case "ArrowUp":
+    deal(inputEnum:InputEnum) {
+        switch (inputEnum) {
+            case InputEnum.UP:
                 this.tank.up()
                 break;
-            case "ArrowDown":
+            case InputEnum.DOWN:
                 this.tank.down()
                 break;
-            case "ArrowLeft":
+            case InputEnum.LEFT:
                 this.tank.left()
                 break;
-            case "ArrowRight":
+            case InputEnum.RIGHT:
                 this.tank.right()
+                break;
+            case InputEnum.FIRE:
+                this.tank.fire()
                 break;
             default:
                 return;
